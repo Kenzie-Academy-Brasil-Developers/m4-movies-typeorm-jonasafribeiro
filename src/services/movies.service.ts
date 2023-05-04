@@ -28,7 +28,7 @@ const moviesServices = {
     let sort = payload.req.query.sort as "price" | "duration" | undefined;
     let order = payload.req.query.order as "asc" | "desc" | undefined;
 
-    if (take <= 0) {
+    if (take <= 0 || take > 5) {
       take = 5;
     }
     if (skip <= 0) {
